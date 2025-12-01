@@ -19,6 +19,10 @@ const CartItem = ({ onContinueShopping }) => {
     return totalCost.toFixed(2);
   };
 
+  const calculateTotalQuantity = () => {
+    return CartItems ? CartItems.reduce((total, item) => total + item.quantity, 0) : 0;
+  };
+
   const handleContinueShopping = (e) => {
     onContinueShopping(e);
   };
